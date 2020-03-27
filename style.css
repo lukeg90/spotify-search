@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+.result {
+    margin: 20px 0 20px 0;
+}
+
+.result:hover {
+    background: limegreen;
+    opacity: 0.5;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.result p {
+    display: inline;
+    position: absolute;
+    font-size: 40px;
+    color: black;
+    padding-left: 20px;
+}
+
+p {
+    font-size: 40px;
+    color: black;
+}
+
+.more {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    background: limegreen;
+    opacity: 0.5;
+    margin: 30px auto;
+    display: block;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.more:hover {
+    cursor: pointer;
+}

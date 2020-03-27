@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+            rel="stylesheet"
+        />
+        <title>Spotify Search</title>
+    </head>
+    <body>
+        <header>
+            <h1>Spotify Search</h1>
+        </header>
+        <input type="text" name="user-input" />
+
+        <select class="artist-or-album">
+            <option id="artist">artist</option>
+            <option id="album">album</option>
+        </select>
+
+        <button class="submit-btn">Submit</button>
+
+        <div class="resultsOrNot"></div>
+        <script id="resultsOrNot" type="text/x-handlebars-template">
+            {{#if items.length}}
+                <p>Results for {{input}}:</p>
+            {{else}}
+                <p>No results for {{input}}</p>
+            {{/if}}
+        </script>
+
+        <div class="results-container"></div>
+        <script id="results" type="text/x-handlebars-template">
+            {{#items}}
+            <a href="{{external_urls/spotify}}">
+                <div class="result">
+                    {{#if images}}
+                        <img src="{{images.0.url}}" alt="img">
+                    {{else}}
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR6jZKhGT8OLnZxnBFnvcQsTDXEXjZaoZHfPtcfgUlMSEq2vfMP" alt="img">
+                    {{/if}}
+                    <p>{{name}}</p>
+                </div>
+            </a>
+            {{/items}}
+        </script>
+
+        <button class="more">More Results</button>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
